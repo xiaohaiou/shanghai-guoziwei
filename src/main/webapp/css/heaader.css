@@ -1,0 +1,194 @@
+*{
+	font-family: "微软雅黑";
+	padding: 0;
+	margin: 0;
+}
+
+.l_top{
+	position: relative;
+	text-align: right;
+	display: block;
+	height: 70px;
+	width: 100%;
+	background-color: rgb(14, 22, 28);
+}
+
+.l_top_bg2{
+	background: #1d3654;
+}
+
+.l_top>* {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.l_top.menu {
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+}
+
+/*左方*/
+/*logo*/
+.l_logo{
+	position: absolute;
+	top: 20px;		
+	left: 40px;		
+}
+
+
+.l_logo_p1{
+	position: absolute;
+	top: 16px;
+	left: 290px;
+	font-size: 16px;
+	color: #fff;
+}
+
+.l_logo_p2{
+	position: absolute;
+	top: 38px;
+	left: 290px;
+	font-size: 9px;
+	color: #606365;
+}
+
+
+
+/*导航*/
+.l_top>ul.menu {
+	margin-right: 40px;
+	display: none;
+}
+
+.l_top>ul.menu>* {
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+.l_top>ul.menu>*>a {
+	color: #bebdbd;
+	text-decoration: none;
+	display: block;
+	padding: 5px 0px;
+	margin: 16px 20px 0 20px;
+	font-size: 16px;
+}
+
+.l_top>ul.menu>*>a.cur {
+	color: #FFFFFF;
+	border-bottom: 5px solid #cd1c0d;
+}
+
+/*时间*/
+
+.l_top>.time {
+	font-size: 14px;
+	line-height: 70px;
+	color: #fff;
+}
+
+.l_top>.user {
+	margin-left: 50px;
+}
+
+.l_top>.user>* {
+	display: inline-block;
+	vertical-align: top;
+	height: 100%;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*用户*/
+/*姓名*/
+.user>*>.name {
+	font-size: 18px;
+	line-height: 18px;
+	color: #fff;
+	margin-top: 15px;
+	line-height: 36px;
+}
+/*职位*/
+.user>*>.title {
+	font-size: 14px;
+	line-height: 14px;
+	color: #8a8d8e;
+	margin-top: 7px;
+}
+/*头像div*/
+.user>.avatar {
+	margin: 9px 26px 15px 18px;
+	height: 46px;
+	width: 46px;
+	border-radius: 50%;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+
+.avatar>img {
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+}
+
+/*右方图标*/
+.i_btn{
+	position: relative;
+	width: 70px;
+	line-height: 70px;
+	overflow: hidden;
+	text-align: center;
+	border-left: 1px solid #576b84;
+}
+
+.i_btn>img{
+	padding: 16px;
+	width: 100%;
+	color: #fff;
+}
+
+.i_btn>.num{
+	display: block;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	font-size: 12px;
+	line-height: 12px;
+	width: 16px;
+	height: 16px;
+	color: #fff;
+	background: red;
+	border: 1px solid #fff;
+	border-radius: 50%;
+}
+
+
+.i_btn{
+	border-left: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+.i_btn>i{
+	padding: 16px;
+	width: 100%;
+	color: #4f5358;
+	font-size: 36px;
+}
+
+.i_btn:hover{
+	background: #cd1c0d;	
+	transition: all 0.1s linear;
+	text-decoration: none;		
+}
+
+.i_btn:hover>i{
+	color: #fff;
+	transition: all 0.1s linear;
+}
+	
+

@@ -1,0 +1,40 @@
+.container1{
+	width: 100%;
+	height: 394px;
+}
+
+.container1>.wrapper1 img{
+	width: 100%;
+	height: 394px;
+}
+
+.bullet{
+	width: 20px;
+	height: 20px;
+	background: red;
+}
+
+.swiper-pagination-bullet-active {
+	opacity: 1;
+	background: #cd1c0d;
+}
+
+.swiper-button-prev{
+	display: none;
+	opacity: 0.5;
+}
+
+.swiper-button-next{
+	display: none;
+	opacity: 0.5;
+}
+
+.container1:hover .swiper-button-prev{
+	display: block;
+	transition: all 0.1s linear;
+}
+
+.container1:hover .swiper-button-next{
+	display: block;
+	transition: all 0.1s linear;
+}

@@ -1,0 +1,37 @@
+html,body {
+    color:#fff;
+    margin:0;
+    padding:0;
+    -webkit-user-select:none;
+    -webkit-font-smoothing: antialiased;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust: 100%;
+}
+/*ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,address {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style:none;
+    font-weight: normal;
+}*/
+/*以上为通用样式,换为自己的通用样式表即可*/
+.ul_container {
+	height:192px;
+	overflow: hidden;
+	text-align: left;
+}
+.ul_container li {
+    font-size: 14px;
+    height: 38px;
+    overflow: hidden;/*超出部分隐藏*/
+    white-space: nowrap;/*不换行*/
+    text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+.ul_container li:first-child {
+	margin-top: 0px;
+	transition: margin-top .8s;/*此处可修改每次滚动持续时间*/
+}
+.gzw_detail{
+    height: 280px;
+    overflow: hidden;
+}

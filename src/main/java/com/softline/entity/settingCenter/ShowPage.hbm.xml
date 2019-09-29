@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.softline.entity.settingCenter.ShowPage" table="hh_page">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native"></generator>
+        </id>
+        <property name="portalId" type="java.lang.Integer">
+            <column name="portal_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="pageNum" type="java.lang.String">
+            <column name="page_num">
+                <comment>页面编号</comment>
+            </column>
+        </property>
+         <property name="pageName" type="java.lang.String">
+            <column name="page_name">
+                <comment>页面名称</comment>
+            </column>
+        </property>
+        <property name="pageDescription" type="java.lang.String">
+            <column name="page_description">
+                <comment>页面描述</comment>
+            </column>
+        </property>
+        <property name="isDel" type="java.lang.Integer">
+            <column name="is_del">
+                <comment>是否删除 0为正常使用，1为删除</comment>
+            </column>
+        </property>
+        
+    </class>
+</hibernate-mapping>

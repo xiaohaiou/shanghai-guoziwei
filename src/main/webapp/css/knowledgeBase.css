@@ -1,0 +1,70 @@
+/* 重置默认样式 */
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li, tr, td, p{
+	padding: 0;
+	margin: 0;
+}
+
+iframe, textarea, input, select, button {
+	border: none;
+	outline: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* 默认字体 */
+
+body {
+	font-family: "微软雅黑", "microsoft yahei", "simhei", monospace;
+}
+
+
+/* 布局 */
+.table, .table-m{
+	display:table;
+}
+.table>*:not(style):not(script), .vtable>*:not(style):not(script), .table-cell {
+	display: table-cell;
+	vertical-align: top;
+}
+.table-m>*:not(style):not(script), .vtable-m>*:not(style):not(script), .table-cell-m {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.htable{
+	display:table;
+}
+.htable>*:not(style):not(script){
+	display:table-row;
+	vertical-align: top;
+}
+.children-inline-middle>*:not(style):not(script), .ci-m>*:not(style):not(script) {
+	display: inline-block;
+	vertical-align: middle;
+}
+.children-inline>*:not(style):not(script), .ci>*:not(style):not(script) {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.children-inline-middle>*:not(style):not(script), .ci-m>*:not(style):not(script) {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.nowrap {
+	white-space: nowrap;
+}

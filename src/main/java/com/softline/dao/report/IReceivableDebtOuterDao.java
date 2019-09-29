@@ -1,0 +1,177 @@
+package com.softline.dao.report;
+
+import java.util.List;
+
+import com.softline.entity.ReportReceivabledebt;
+import com.softline.entity.ReportReceivabledebtOuter;
+import com.softline.entity.ReportReceivabledebtinfo;
+import com.softline.entity.ReportReceivabledebtinfoOuter;
+
+public interface IReceivableDebtOuterDao {
+
+	/**
+	 * 通过ID查询
+	 * @param id 查询ID
+	 * @return
+	 */
+	public ReportReceivabledebtOuter getReceivabledebtbyID(Integer id);
+	
+	
+	/**
+	 * 获取总记录数
+	 * @param examineentityid
+	 * @param examinekind
+	 * @return
+	 */
+	public int getReceivabledebtListCount(ReportReceivabledebtOuter entity);
+	
+	
+	/**
+	 * 获取记录
+	 * @param examineentityid
+	 * @param examinekind
+	 * @return
+	 */
+	public List<ReportReceivabledebtOuter> getReceivabledebtList(ReportReceivabledebtOuter entity ,Integer offsize,Integer pagesize); 
+	
+	
+	/**
+	 * 保存时校验重复的方法
+	 * @param entity
+	 * @return
+	 */
+	public boolean saveReceivabledebtRepeatCheck(ReportReceivabledebtOuter entity);
+	
+	
+	/**
+	 * 保存时检查数据是否被能修改
+	 * @param entity
+	 * @return
+	 */
+	public boolean checkCanEdit(ReportReceivabledebtOuter entity);
+	
+	
+	/**
+	 * 删除子信息
+	 * @param groupID
+	 * @return
+	 */
+	public boolean deleteReceivabledebtinfo(String groupID);
+	
+	
+	/**
+	 * 查询子信息数量
+	 * @param id 查询ID
+	 * @return
+	 */
+	public Integer getReceivabledebtinfoCount(Integer id);
+	
+	
+	/**
+	 * 获取人事数据子信息
+	 * @param groupID
+	 * @return
+	 */
+	public List<ReportReceivabledebtinfoOuter> getReceivabledebtinfoList(Integer groupID ,Integer offsize,Integer pagesize);
+	
+	
+	/**
+	 *   --------------------------------应收债权(内部)明细查询---------------------------------------
+	 */
+	
+	/**
+	 * 查询子信息数量
+	 * @param id 查询ID
+	 * @return
+	 */
+	public Integer getReceivabledebtinfoDetailCount(ReportReceivabledebtinfoOuter entity);
+	
+	
+	/**
+	 * 获取人事数据子信息
+	 * @param groupID
+	 * @return
+	 */
+	public List<ReportReceivabledebtinfoOuter> getReceivabledebtinfoDetailList(ReportReceivabledebtinfoOuter entity,Integer offsize,Integer pagesize);
+	
+	/**
+	 * 通过ID查询明细
+	 * @param id 查询ID
+	 * @return
+	 */
+	public ReportReceivabledebtinfoOuter getReceivabledebtinfobyID(Integer id);
+	
+	
+	/**
+	 *   --------------------------------应收债权(内部)汇总查询---------------------------------------
+	 */
+	
+	/**
+	 * 查询子信息数量
+	 * @param id 查询ID
+	 * @return
+	 */
+	public Integer getReceivabledebtinfoCollectCount(ReportReceivabledebtinfoOuter entity);
+	
+	
+	/**
+	 * 获取人事数据子信息
+	 * @param groupID
+	 * @return
+	 */
+	public List<Object> getReceivabledebtinfoCollectList(ReportReceivabledebtinfoOuter entity,Integer offsize,Integer pagesize);
+	
+	
+	/**
+	 *   --------------------------------公司大额应收债权(内部)查询---------------------------------------
+	 */
+	
+	/**
+	 * 查询子信息数量
+	 * @param id 查询ID
+	 * @return
+	 */
+	public Integer getReceivabledebtinfoOrgCount(ReportReceivabledebtinfoOuter entity);
+	
+	
+	/**
+	 * 获取人事数据子信息
+	 * @param groupID
+	 * @return
+	 */
+	public List<Object> getReceivabledebtinfoOrgList(ReportReceivabledebtinfoOuter entity,Integer offsize,Integer pagesize);
+	
+	
+	/**
+	 *   --------------------------------超期外部应收账款无催收进展一览---------------------------------------
+	 */
+	
+	
+	/**
+	 * 查询子信息数量
+	 * @param id 查询ID
+	 * @return
+	 */
+	public Integer getOverOutCount(ReportReceivabledebtinfoOuter entity);
+	
+	
+	/**
+	 * 获取子信息
+	 * @param groupID
+	 * @return
+	 */
+	public List<ReportReceivabledebtinfoOuter> getOverOutList(ReportReceivabledebtinfoOuter entity,Integer offsize,Integer pagesize);
+
+
+	public List<ReportReceivabledebtinfoOuter> getReportReceivabledebtOuter(ReportReceivabledebtinfoOuter entity);
+
+
+	public List<ReportReceivabledebtinfoOuter> getReceivabledebtinfoCollectListExport(ReportReceivabledebtinfoOuter entity);
+
+
+	public List<ReportReceivabledebtinfoOuter> getReceivabledebtinfoOrgExport(ReportReceivabledebtinfoOuter entity);
+
+
+	public List<ReportReceivabledebtinfoOuter> getOverOutListExport(ReportReceivabledebtinfoOuter entity);
+	
+}

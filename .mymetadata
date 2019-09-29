@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="shanghai-gzw"
+  id="myeclipse.1464240061605"
+  context-root="/shanghai-gzw"
+  j2ee-spec="6.0"
+  archive="shanghai-gzw.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

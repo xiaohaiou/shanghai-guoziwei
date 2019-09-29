@@ -1,0 +1,138 @@
+.win {
+	display: none;
+}
+.mask-layer {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	background-color: black;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+}
+.window-panel {
+	position: fixed;
+	z-index: 101;
+	top: 50%;
+	left: 50%;
+	background-color: white;
+	border-radius: 5px;
+}
+.window-panel .title-panel {
+	position: absolute;
+	height: 36px;
+	width: 100%;
+}
+.window-panel .title {
+	height: 40px;
+	position: absolute;
+	top:30px;
+	width:50px;
+	left: 20px;
+	margin: 15px auto;
+	text-align: center;
+	border-radius: 4px 4px 0 0;
+	line-height: 40px;
+	vertical-align: middle;
+	height: 49px;
+	z-index: 1;
+	background-image: url(../images/info-btn.png);
+}
+.title.title-success{
+	top:20px;
+	background-position: -108px 0px;
+}
+.title.title-info{
+	background-position: -162px 0px;
+}
+.title.title-question{
+	background-position: -216px 0px;
+}
+.title.title-error{
+	background-position: -54px 0px;
+}
+.window-panel h3 {
+	display: none;
+	font-size: 14px;
+	margin: 0;
+	display: block;
+	text-align: left;
+	padding-left: 10px;
+	color: #555;
+}
+.window-panel .close-btn {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	right: 0px;
+	text-decoration: none;
+	font-size: 24px;
+	color: #aaa;
+	border-radius: 2px;
+	top:0px;
+	z-index: 1;
+}
+.window-panel.success{
+	height: 140px !important;
+}
+.window-panel .close-btn:hover{
+	color: #555;
+}
+.window-panel .body-panel {
+	position: absolute;
+	width: 100%;
+	top: 36px;
+	border-radius: 0 0 4px 4px;
+	z-index: 1;
+}
+.window-panel .content{
+	text-align: center;
+}
+.window-panel .btns {
+	text-align: right;
+	float: right;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+.window-panel .content {
+	padding: 18px 5px 0px 85px;
+	font-size: 18px;
+	color: #888;
+	min-height: 40px;
+	line-height: 22px;
+	text-align: left;
+
+}
+.window-panel .w-btn {
+	display: inline-block;
+	width: 60px;
+	height: 33px;
+	line-height: 33px;
+	background-color: #008bcb;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 2px;
+	text-decoration: none;
+	margin: 0 10px 0px 10px;
+	border: none;
+}
+.window-panel .w-btn.qx{
+	background-color: #ff6600;
+}
+.window-panel .w-btn.qx:hover{
+	background-color: #ff9900;
+}
+.window-panel .w-btn:hover {
+	background-color: #00aff1;
+}
+.window-panel .w-btn:focus {
+	outline: 0 none;
+}

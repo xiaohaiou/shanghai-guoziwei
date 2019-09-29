@@ -1,0 +1,174 @@
+/* 重置默认样式 */
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	padding: 0;
+	margin: 0;
+}
+
+iframe, textarea, input, select,button {
+	border: none;
+	outline: 0;
+}
+button{
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* 默认字体 */
+
+body {
+	font-family: "微软雅黑", "microsoft yahei", "simhei", monospace;
+}
+
+
+/* 循环边框色 */
+
+.color-loop-border .loop-item:nth-child(3n+1), .color-loop-border .loop-i:nth-child(3n+1) {
+	border-color: #639ddd;
+}
+
+.color-loop-border .loop-item:nth-child(3n+2), .color-loop-border .loop-i:nth-child(3n+2) {
+	border-color: #49b8b2;
+}
+
+.color-loop-border .loop-item:nth-child(3n+3), .color-loop-border .loop-i:nth-child(3n+3) {
+	border-color: #da68a5;
+}
+
+
+/* 颜色 */
+
+.color-white-1, .c-w1 {
+	/* 亮,用作标题 */
+	color: #e3e3e3;
+}
+
+.color-border, .c-b1,
+.color-white-1.color-border, .c-w1.c-b{
+	/* 同色边框 */
+	border-color: #e3e3e3;
+}
+
+.color-white-2, .c-w2 {
+	/* 较亮,用作标题 */
+	color: #ccc;
+}
+
+.color-white-2.color-border, .c-w2.c-b {
+	/* 较暗,用作内容 */
+	border-color: #ccc;
+}
+
+.color-white-3, .c-w3 {
+	/* 较暗,用作内容 */
+	color: #999;
+}
+
+.color-white-3.color-border, .c-w3.c-b {
+	/* 较暗,用作内容 */
+	border-color: #999;
+}
+
+.color-white-4, .c-w4 {
+	color: #fff;
+}
+
+.color-dark-level-1, .c-d1 {
+	/* 较暗,用作内容 */
+	color: #555;
+}
+
+.color-white-background-1, .bg-w1 {
+	background-color: #f3f3f3;
+}
+
+/* 常用边框 */
+.border-grey-1, .b-g1{
+	border: 1px solid #e3e3e3;
+	border-radius: 3px;
+}
+.border-grey-1 .border-grey-1-left, .b-g1 .b-g1-l{
+	border-left: 1px solid #e3e3e3;
+}
+.border-grey-1 .border-grey-1-top, .b-g1 .b-g1-t{
+	border-top: 1px solid #e3e3e3;
+}
+
+
+/* 常规字体尺寸 */
+
+.font-size-20, .fs20, .fs-l {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+.font-size-18, .fs18 {
+	font-size: 18px;
+	line-height: 12px;
+}
+
+.font-size-16, .fs16, .fs-m, .fs-n {
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.font-size-14, .fs14, .fs-s {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.font-size-12, .fs12, .fs-xs {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+
+/* 左到右的布局 */
+
+.children-inline>*:not(style):not(script), .ci>*:not(style):not(script) {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.children-inline-middle>*:not(style):not(script), .ci-m>*:not(style):not(script) {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.nowrap{
+	white-space: nowrap;
+}
+
+
+/* 头像 */
+
+.avatar {
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 1);
+	background-clip: content-box;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.avatar>img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	background-color: rgba(255, 255, 255, 0);
+	background-clip: content-box;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}

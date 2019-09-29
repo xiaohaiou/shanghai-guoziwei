@@ -1,0 +1,251 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: default;
+}
+body{
+	font-family: 'microsoft yahei';
+	font-size: 14px;
+	height: 100vh;
+	width: 100vw;
+	background: url(../img/bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+/* p:hover{
+	cursor: pointer;
+	text-decoration: underline;
+} */
+.detail2 img,.detail3 i,.detail4 i,.large_num,.center_btn td,.center_icon img,.part1 img{
+	cursor: pointer;
+}
+.head{
+	font-size: 30px;
+	color: #ddd;
+	background: url(../img/header.png) no-repeat;
+	background-size: 100% 100%;
+	width: 27%;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 0.4%;
+	height: 7%;
+    transform: perspective(0.5em) rotateX(-1.2deg) translateX(8px);
+    opacity: 0.75;
+}
+.head>p{
+	transform: perspective(0.5em) rotateX(1.2deg) translateX(8px);
+}
+.body1{
+    height: 42%;
+    display: flex;
+    margin-top: -1.5%;
+    padding: 0 1%;
+}
+.part1,.part3{
+    height: 100%;
+    width: 28%;
+    border: 2px solid #3b4657;
+    background: rgba(59, 70, 87, 0.15);
+}
+.part2{
+	background: url(../img/main_bg.png);
+    background-size: 100% 100%;
+	height: 100%;
+	width: 42%;
+	margin: 0 1%;
+}
+.body2{
+	height: 42%;
+    display: flex;
+    margin-top: 1%;
+    padding: 0 1%;
+}
+.part4,.part6{
+    height: 100%;
+    width: 32%;
+    border: 2px solid #3b4657;
+    background: rgba(59, 70, 87, 0.15);
+}
+.part5{
+	height: 100%;
+    width: 34%;
+    border: 2px solid #3b4657;
+    margin: 0 1%;
+    background: rgba(59, 70, 87, 0.15);
+}
+.part_title,.part_title2{
+	color: #3fa2e3;
+    font-size: 21px;
+    line-height: 2.3em;
+    padding-left: 20px;
+    
+}
+.part_title{
+    background: rgba(0,0,0,0.06);
+    height: 12%;
+}
+.part_title:hover,.part_title2:hover,.head>p:hover{
+	text-decoration: none;
+	cursor: default;
+}
+.part_body{
+	display: flex;
+}
+.detail{
+	position: relative;
+	width: 50%;
+	text-align: center;
+	margin-top: 5vh;
+}
+.detail2{
+	position: relative;
+	width: 33.3%;
+	text-align: center;
+	margin-top: 5vh;
+}
+.detail3{
+	position: relative;
+	width: 33.3%;
+	text-align: center;
+	margin-top: 4vh;
+}
+.detail>p,.detail2>p,.detail3>p{
+	color: rgba(255,255,255,0.8);
+}
+.num{
+    position: absolute;
+    top: 0;
+    right: 32%;
+    color: #fff;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    line-height: 24px;
+}
+.large_num{
+	color: #B00704;
+	font-size: 60px;
+}
+.icon{
+	color: #1f6fb9;
+}
+.icon i{
+	font-size: 60px;
+}
+.detail3 .icon i{
+	font-size: 34px;
+	color: rgba(255,255,255,0.8);
+}
+.num1{
+	background: #26a0b1;
+}
+.num2{
+	background: #1f6fb9;
+}
+.num3{
+	background: #b13a06;
+}
+.search{
+    width: 100%;
+    padding: 0 10%;
+    margin-top: 7%;
+}
+.search>input{
+	background: transparent;
+    border: 2px solid #3b4657;
+    line-height: 41px;
+    width: 73%;
+    padding-left: 1em;
+    vertical-align: bottom;
+    margin-right: 4px;
+}
+.search>span{
+    background: url(../img/button.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    line-height: 45px;
+    padding: 0 40px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.work_list{
+	padding: 10px 28px;
+	width: 100%;
+}
+.work_list>p{
+	line-height: 4.5em;
+	border-bottom: 1px solid rgba(126, 176, 207, 0.45);
+	font-size: 14px;
+	color: #d3d5d8;
+	letter-spacing: 1px;
+	width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.work_list>p:last-child{
+	border-bottom: none;
+}
+.center_icon{
+	width: 25%;
+	text-align: center;
+	padding-top: 2vh;
+	float: left;
+}
+.center_icon>p{
+    color: #babcbf;
+    margin-top: 5px;
+}
+.part2{
+	position: relative;
+}
+.center_btn{
+    position: absolute;
+    background: url(../img/main_bk.png);
+    background-size: 100% 100%;
+    bottom: 7%;
+    width: 80%;
+    left: 10%;
+    height: 12%;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+    height: 100%;
+}
+td{
+	height: 100%;
+	color: #d3d5d8;
+	text-align: center;
+	font-size: 18px;
+	padding-left: 5px;
+}
+.td_active{
+	background: url(../img/main_xz.png);
+	background-size: 100% 100%;
+	color: #3fa2e8;
+}
+.msg{
+    position: absolute;
+    top: 78px;
+}
+.msg i{
+	color: #3fa2e8;
+	margin-left: 40px;
+	font-size: 24px;
+}
+marquee{
+    display: inline-block;
+    position: absolute;
+    left: 80px;
+    width: 25%;
+    top: 80px;
+}
+marquee p{
+	display: inline-block;
+	color: #d3d5d8;
+	margin-right: 60px;
+}

@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  // font-family: Segoe UI, "microsoft yahei";
+  // background:url(../images/bg_f.png) no-repeat bottom; 
+  // background-color: #075cb0;
+  background: url(../images/bg_f.png) no-repeat bottom,url(../images/light.png) no-repeat top,-webkit-linear-gradient(top,#075cb0,#0e8fe7);
+  color: #fff;
+}
+
+$lte7: true;
+%clearfix{
+  @if $lte7 {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    font: 0/0 a;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix{
+  @extend %clearfix;
+}
+.fl{
+  float: left;
+}
+h1{
+  text-align: left;
+  font-weight: 900;
+  line-height: 65px;
+  color:#0efefb;
+  font-size: 32px;
+  margin-left: 2%;
+  display: inline-block;
+}
+.bg_green{
+  background: #31d666;
+}
+.bg_red{
+  background: #ca353b;
+}
+
+.top{
+    height: 65px;
+    background: rgba(#000,0.38);
+    position: relative;
+    .top_select{
+      display: inline-block;
+      line-height: 65px;
+      position: absolute;
+      right: 2%;
+      span{
+        font-size: 14px;
+        margin-left: 10px;
+      }
+      select{
+        border:1px solid #829cb6;
+        height:38px;
+        background:#3b286c;
+        color:#fff;
+        padding:0 40px 0 10px;
+        margin-left: 10px;
+      }
+      img{
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+  }
+  .top:before{
+    content: '';
+    position: absolute;
+    left: 1%;
+    top: 60px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #4e99cc;
+  }
+  .top:after{
+    content: '';
+    position: absolute;
+    right: 1%;
+    top: 60px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #4e99cc;
+  }
+  .line{
+    width: 98%;
+    height: 1px;
+    margin-left: 1%;
+    background: #4e99cc;
+    position: relative;
+  }
+  .line:after{
+    content: '';
+    width: 78%;
+    height: 1px;
+    position: absolute;
+    right: 1%;
+    top: 2px;
+    margin-left: 1%;
+    background: #4e99cc;
+
+  }
+.container{
+  font-size:0;
+  .case{
+    width: 47%;
+    background: rgba(#000,0.4);
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 35px;
+    padding-bottom: 35px;
+    .linechart{
+      width: 100%;
+      height: 200px;
+    }
+    .case_title{
+      font-size: 20px;
+      position: relative;
+      padding-left: 4%;
+      line-height: 46px;
+      text-indent: 6px;
+      border-bottom: 1px solid #7c93b3;
+    }
+      .case_title:before{
+       content: '';
+       position:absolute;
+       left:0;
+       top:14px;
+       background: #3798df;
+       width: 3px;
+       height: 20px;
+       margin-left: 3.5%;
+    }
+    .case_subtext{
+      margin-right: 3.5%;
+      font-size: 20px;
+    }
+    .case_subtext1:before{
+      content: '总市值：';
+      color: #71b0dd;
+      font-size: 16px;
+      padding-right: 1%
+    }
+    .case_subtext2:before{
+      content: '流通市值：';
+      color: #71b0dd;
+      font-size: 16px;
+      padding-right: 1%
+    }
+    .case_left{
+      width: 28%;
+      height: 126px;
+      border-radius: 5px;
+      margin-left: 3.5%;
+      margin-top: 35px;
+      .case_left_icon{
+        margin-top: 43px;
+        padding-bottom: 43px;
+        margin-left: 10%;
+        display: inline-block;
+        float: left;
+      }
+      .case_left_block{
+        float: left;
+        width: 70%;
+        margin-top: 12px;
+         .case_left_title{
+          display: inline-block;
+          float: left;
+          font-size: 46px;
+          font-weight: bold;
+          width: 100%;
+          margin-left: 15%;
+        }
+         .case_left_content{
+          font-size: 16px;
+          float: left;
+          margin-top: 5px;
+          margin-left: 17%;
+          img{
+            margin-bottom: 2px;
+          }
+        }
+      }
+    }
+    table{
+      font-size: 16px;
+      float: left;
+      margin-top: 35px;
+      margin-left: 1.5%;
+      width: 63.5%;
+      text-align: center;
+      tbody{
+        tr{
+          line-height: 28px;
+          th{
+            color: #71b0dd;
+            font-weight: normal;
+          }
+          td{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}

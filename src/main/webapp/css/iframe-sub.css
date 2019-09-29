@@ -1,0 +1,47 @@
+@charset "utf-8";
+.model_content {
+	position: relative;
+	height: auto;
+	width: auto;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 0;
+}
+
+h4 {
+	margin-top: 0;
+}
+
+.model_content form {
+	padding-bottom: 1rem;
+}
+
+.model_body {
+	height: auto;
+}
+
+html,body {
+	height: auto;
+}
+
+body {
+	padding-bottom: 4rem;
+}
+
+.row {
+	white-space: nowrap;
+}
+
+.model_btn {
+	position: static;
+	width: 100%;
+	right: 0;
+	text-align: right;
+}
+
+.model_content button {
+	margin: 0.1rem 1rem 1rem 0;
+	display: inline-block;
+	vertical-align: top;
+}

@@ -1,0 +1,407 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  // font-family: Segoe UI, "microsoft yahei";
+  // background:url(../images/bg_f.png) no-repeat bottom; 
+  // background-color: #075cb0;
+  background: url(../images/bg_f.png) no-repeat bottom,url(../images/light.png) no-repeat top,-webkit-linear-gradient(top,#075cb0,#0e8fe7);
+  color: #fff;
+}
+$lte7: true;
+%clearfix{
+  @if $lte7 {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    font: 0/0 a;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix{
+  @extend %clearfix;
+}
+.fl{
+  float: left;
+}
+h1{
+  text-align: left;
+  font-weight: 900;
+  line-height: 65px;
+  color:#0efefb;
+  font-size: 32px;
+  margin-left: 2%;
+  display: inline-block;
+}
+h2{
+    display: inline-block;
+    width: 96%;
+    font-size: 20px;
+    // padding-left: 4%;
+    line-height: 46px;
+    // text-indent: 6px;
+    margin-top: 20px;
+    font-weight: normal;
+}
+.bg_green{
+  background: #31d666;
+}
+.bg_red{
+  background: #ca353b;
+}
+
+.top{
+    height: 65px;
+    background: rgba(#000,0.38);
+    position: relative;
+    .top_select{
+      display: inline-block;
+      line-height: 65px;
+      position: absolute;
+      right: 2%;
+      span{
+        font-size: 14px;
+        margin-left: 10px;
+      }
+      img{
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+  }
+  .top:before{
+    content: '';
+    position: absolute;
+    left: 1%;
+    top: 60px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #4e99cc;
+  }
+  .top:after{
+    content: '';
+    position: absolute;
+    right: 1%;
+    top: 60px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #4e99cc;
+  }
+  .line{
+    width: 98%;
+    height: 1px;
+    margin-left: 1%;
+    background: #4e99cc;
+    position: relative;
+  }
+  .line:after{
+    content: '';
+    width: 78%;
+    height: 1px;
+    position: absolute;
+    right: 1%;
+    top: 2px;
+    margin-left: 1%;
+    background: #4e99cc;
+
+  }
+.container{
+  font-size:0;
+  .case{
+    width: 96%;
+    background: rgba(#000,0.4);
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 35px;
+    padding-bottom: 35px;
+    .case_border{
+      
+    }
+    .financial_tree{
+       height: 1200px;
+       margin-top: 35px;
+       background: #58a;
+       background: linear-gradient(135deg, transparent 20px, #16dada 0) top left, 
+       linear-gradient(-135deg, transparent 20px, #16dada 0) top right, 
+       linear-gradient(-45deg, transparent 20px, #16dada 0) bottom right, 
+       linear-gradient(45deg, transparent 20px, #16dada 0) bottom left;
+       background-size: 50% 50%;
+       background-repeat: no-repeat;
+       width: 24%;
+       float: left;
+       margin-left: 2%;
+       position: relative;
+       .financial_tree2{
+              height: 1198px;
+              background: linear-gradient(135deg, transparent 20px, #152451 0) top left, 
+              linear-gradient(-135deg, transparent 20px, #152451 0) top right, 
+              linear-gradient(-45deg, transparent 20px, #152451 0) bottom right, 
+              linear-gradient(45deg, transparent 20px, #152451 0) bottom left;
+              background-size: 50% 50%;
+              background-repeat: no-repeat;
+              margin: 1px;
+              .case_title_left{
+                float: left;
+                margin-top: 69px;
+                font-size: 12px;
+                height: 1062px;
+                width: 174px;
+                border-right: 2px solid #4f89b2;
+                position: relative;
+                .case_title_left_1{
+                        height: 36px;
+                        width: 130px;
+                        background: #58a;
+                        background: linear-gradient(135deg, transparent 5px, #4f89b2 0) top left, 
+                        linear-gradient(-135deg, transparent 5px, #4f89b2 0) top right, 
+                        linear-gradient(-45deg, transparent 5px, #4f89b2 0) bottom right, 
+                        linear-gradient(45deg, transparent 5px, #4f89b2 0) bottom left;
+                        background-size: 50% 50%;
+                        background-repeat: no-repeat;
+                        float: left;
+                        position: absolute;
+                        margin: auto;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        text-align: center;
+                        .case_title_left_2{
+                               height: 32px;
+                               background: linear-gradient(135deg, transparent 5px, #342168 0) top left, 
+                               linear-gradient(-135deg, transparent 5px, #342168 0) top right, 
+                               linear-gradient(-45deg, transparent 5px, #342168 0) bottom right, 
+                               linear-gradient(45deg, transparent 5px, #342168 0) bottom left;
+                               background-size: 50% 50%;
+                               background-repeat: no-repeat;
+                               margin: 2px;
+                               line-height: 32px;
+                        }
+                     }
+                     .case_title_left_1:after{
+                            content: '';
+                            width: 24px;
+                            height: 2px;
+                            background: #4f89b2;
+                            position: absolute;
+                            left: 130px;
+                            top: 17px;
+                     }
+              }
+              .case_title_right::-webkit-scrollbar {
+        display: none;
+    }
+              .case_title_right{
+                float: left;
+                height: 1096px;
+                overflow-y: scroll;
+                margin-top: 52px;
+                font-size: 12px;
+                ul{
+                  list-style: none;
+                  padding-left: 32px;
+                  li:nth-child(1){
+                    margin-top: 0;
+                  }
+                  li{
+                    height: 36px;
+                    width: 190px;
+                    margin-top: 17px;
+                    background: #58a;
+                    background: linear-gradient(135deg, transparent 5px, #7d87a1 0) top left, 
+                    linear-gradient(-135deg, transparent 5px, #7d87a1 0) top right, 
+                    linear-gradient(-45deg, transparent 5px, #7d87a1 0) bottom right, 
+                    linear-gradient(45deg, transparent 5px, #7d87a1 0) bottom left;
+                    background-size: 50% 50%;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    span{
+                      display: inline-block;
+                      height: 32px;
+                      width: 186px;
+                      line-height: 32px;
+                      background: linear-gradient(135deg, transparent 5px, #152451 0) top left, 
+                      linear-gradient(-135deg, transparent 5px, #152451 0) top right, 
+                      linear-gradient(-45deg, transparent 5px, #152451 0) bottom right, 
+                      linear-gradient(45deg, transparent 5px, #152451 0) bottom left;
+                      background-size: 50% 50%;
+                      background-repeat: no-repeat;
+                      margin: 2px;
+                      text-indent: 10px;
+                    }
+                  }
+                  li:before{
+                     content: '';
+                     width: 34px;
+                     height: 2px;
+                     background: #4f89b2;
+                     position: absolute;
+                     left: -32px;
+                     top: 17px;
+                  }
+                }
+              }
+       }
+       .financial_tree2:before{
+        content: '公司列表';
+        background: #16dada;
+        color: #fff;
+        font-size: 20px;
+        position: absolute;
+        left: 50%;
+        width: 200px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin-left: -100px;
+        margin-top: -17px;
+       }
+    }
+    .company_list{
+       height: 1200px;
+       margin-top: 35px;
+       background: #58a;
+       background: linear-gradient(135deg, transparent 20px, #16dada 0) top left, 
+       linear-gradient(-135deg, transparent 20px, #16dada 0) top right, 
+       linear-gradient(-45deg, transparent 20px, #16dada 0) bottom right, 
+       linear-gradient(45deg, transparent 20px, #16dada 0) bottom left;
+       background-size: 50% 50%;
+       background-repeat: no-repeat;
+       width: 70%;
+       float: left;
+       margin-left: 2%;
+
+       .company_list2{
+              height: 1198px;
+              overflow-y:scroll;
+              background: linear-gradient(135deg, transparent 20px, #152451 0) top left, 
+              linear-gradient(-135deg, transparent 20px, #152451 0) top right, 
+              linear-gradient(-45deg, transparent 20px, #152451 0) bottom right, 
+              linear-gradient(45deg, transparent 20px, #152451 0) bottom left;
+              background-size: 50% 50%;
+              background-repeat: no-repeat;
+              margin: 1px;
+              position: relative;
+              .top_select2{
+                line-height: 85px;
+                position: absolute;
+                right: 2%;
+                  span{
+                  font-size: 14px;
+                  margin-left: 10px;
+                }
+                select{
+                  border:1px solid #829cb6;
+                  height:38px;
+                  background:#3b286c;
+                  color:#fff;
+                  padding:0 40px 0 10px;
+                  margin-left: 10px;
+                }
+              }
+              .top_select2_table{
+                width: 47%;
+                margin-left: 2%;
+                float: left;
+                  .case_title{
+                  display: inline-block;
+                  width: 96%;
+                  font-size: 20px;
+                  position: relative;
+                  padding-left: 4%;
+                  line-height: 46px;
+                  text-indent: 6px;
+                  border-bottom: 1px solid #7c93b3;
+                  margin-top: 20px;
+                }
+                  .case_title:before{
+                   content: '';
+                   position:absolute;
+                   left:-15px;
+                   top:14px;
+                   background: #3798df;
+                   width: 3px;
+                   height: 20px;
+                   margin-left: 3.5%;
+                }
+                  .forms{
+                    float:left;
+                    font-size:13px;
+                    color:#FFF;
+                    display: flex;
+                    flex-wrap:wrap;
+                    div{
+                      width:50%;
+                      display: flex;
+                      align-items:center;
+                      span{
+                        line-height: 40px;
+                        flex:1;
+                      }
+                      input{
+                        margin-right:20px;
+                        height:25px;
+                        background-color:transparent;
+                        color:rgba(255,255,255,0.8);
+                        text-indent: 6px;
+                        border-radius: 5px;
+                        border-width:1px;
+                      }
+                    }
+                  }
+                table{
+                  font-size: 13px;
+                  width: 100%;
+                  margin-top: 20px;
+                  tbody{
+                    tr{
+                            height: 32px;
+                            text-align: center;
+                            th{
+                            background: #215085;
+                            border-bottom: 1px solid #336da1;
+                            width: 10%;
+                            }
+                            th:nth-child(2n){
+                              border-left: 1px solid #336da1;
+                              border-right: 1px solid #336da1;
+                            }
+                            th:last-child{
+                              border-right: none;
+                            }
+                            td{
+                            border-bottom: 1px solid #336da1;
+                            width: 10%;
+                            }
+                            td:nth-child(2n){
+                              border-left: 1px solid #336da1;
+                              border-right: 1px solid #336da1;
+                            }
+                            td:last-child{
+                              border-right: none;
+                            }
+                    }
+                    tr:nth-child(2n-1){
+                      background: #193263;
+                    }
+                  }
+                }
+              }
+       }
+       .company_list2::-webkit-scrollbar {
+        display: none;
+    }
+    }
+  }
+}

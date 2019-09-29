@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.softline.entity.bimr.BimrCivilcaseWeek" table="bimr_civilcase_week">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="caseNum" type="java.lang.String">
+            <column name="case_num" length="100">
+                <comment>案件编码</comment>
+            </column>
+        </property>
+        <property name="caseCategory" type="java.lang.String">
+            <column name="case_category" length="20">
+                <comment>案件分类</comment>
+            </column>
+        </property>
+        <property name="version" type="java.lang.String">
+            <column name="version" length="10">
+                <comment>版本号</comment>
+            </column>
+        </property>
+        <property name="approvalState" type="java.lang.String">
+            <column name="approval_state" length="20">
+                <comment>案件审批状态</comment>
+            </column>
+        </property>
+        <property name="isHistory" type="java.lang.String">
+            <column name="is_history" length="2">
+                <comment>是否是历史版本：1是，0否</comment>
+            </column>
+        </property>
+        <property name="vcCompanyId" type="java.lang.String">
+            <column name="vc_company_id" length="100">
+                <comment>承办单位</comment>
+            </column>
+        </property>
+        <property name="vcCompanyName" type="java.lang.String">
+            <column name="vc_company_name" length="100">
+                <comment>承办单位名称</comment>
+            </column>
+        </property>
+        <property name="plaintiff" type="java.lang.String">
+            <column name="plaintiff" length="200">
+                <comment>原告/申请人/第三人（多人）</comment>
+            </column>
+        </property>
+        <property name="defendant" type="java.lang.String">
+            <column name="defendant" length="200">
+                <comment>被告/被申请人/第三人(多人)</comment>
+            </column>
+        </property>
+        <property name="litigation" type="java.lang.String">
+            <column name="litigation" length="100">
+                <comment>我方诉讼地位(1、主诉，2、被诉)</comment>
+            </column>
+        </property>
+        <property name="admissibleCourt" type="java.lang.String">
+            <column name="admissible_court" length="200">
+                <comment>受理法院</comment>
+            </column>
+        </property>
+        <property name="province" type="java.lang.String">
+            <column name="province" length="100">
+                <comment>受案单位所在地(省份)</comment>
+            </column>
+        </property>
+        <property name="judge" type="java.lang.String">
+            <column name="judge" length="100">
+                <comment>承办法官/仲裁员</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.math.BigDecimal">
+            <column name="amount"  precision="18" scale="2">
+                <comment>涉案金额</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type" length="30">
+                <comment>案件类型</comment>
+            </column>
+        </property>
+        <property name="reason" type="java.lang.String">
+            <column name="reason" length="500">
+                <comment>案由</comment>
+            </column>
+        </property>
+        <property name="baseMessage" type="java.lang.String">
+            <column name="base_message" length="500">
+                <comment>基本案情</comment>
+            </column>
+        </property>
+        <property name="isMajorCase" type="java.lang.String">
+            <column name="is_major_case" length="10">
+                <comment>是否为重大案件</comment>
+            </column>
+        </property>
+        <property name="mediatingStage" type="java.lang.String">
+            <column name="mediating_stage" length="30">
+                <comment>调处阶段</comment>
+            </column>
+        </property>
+        <property name="cooperationDate" type="java.lang.String">
+            <column name="cooperation_date" length="20">
+                <comment>合作开始时间</comment>
+            </column>
+        </property>
+        <property name="disputeDate" type="java.lang.String">
+            <column name="dispute_date" length="20">
+                <comment>纠纷发生时间</comment>
+            </column>
+        </property>
+        <property name="dealDisputeProcess" type="java.lang.String">
+            <column name="deal_dispute_process" length="500">
+                <comment>业务部门解决纠纷的过程</comment>
+            </column>
+        </property>
+        <property name="caseCause" type="java.lang.String">
+            <column name="case_cause" length="500">
+                <comment>成诉原因</comment>
+            </column>
+        </property>
+        <property name="caseDate" type="java.lang.String">
+            <column name="case_date" length="20">
+                <comment>案发时间</comment>
+            </column>
+        </property>
+        <property name="lawWork" type="java.lang.String">
+            <column name="law_work" length="500">
+                <comment>承办法务</comment>
+            </column>
+        </property>
+        <property name="responsiblePerson" type="java.lang.String">
+            <column name="responsible_person" length="200">
+                <comment>案件调处责任人</comment>
+            </column>
+        </property>
+        <property name="responsiblePersonId" type="java.lang.String">
+            <column name="responsible_person_id" length="20">
+                <comment>案件调处责任人Id</comment>
+            </column>
+        </property>
+        <property name="externalLaws" type="java.lang.String">
+            <column name="external_laws">
+                <comment>外聘律所及律师</comment>
+            </column>
+        </property>
+        <property name="lawsAmount" type="java.lang.String">
+            <column name="laws_amount" >
+                <comment>律师费总额（人民币万元）</comment>
+            </column>
+        </property>
+        <property name="payAmount" type="java.math.BigDecimal">
+            <column name="pay_amount"  precision="18" scale="2">
+                <comment>已支付金额（人民币万元）</comment>
+            </column>
+        </property>
+        <property name="foreignLaw" type="java.lang.String">
+            <column name="foreign_law">
+                <comment>对方外聘律所及律师</comment>
+            </column>
+        </property>
+        <property name="predictionResluts" type="java.lang.String">
+            <column name="prediction_resluts" length="500">
+                <comment>预测结果</comment>
+            </column>
+        </property>
+        <property name="planTime" type="java.lang.String">
+            <column name="plan_time" length="500">
+                <comment>调处时间计划表</comment>
+            </column>
+        </property>
+        <property name="expectedResults" type="java.lang.String">
+            <column name="expected_results" length="500">
+                <comment>预计结果</comment>
+            </column>
+        </property>
+        <property name="isAccountability" type="java.lang.String">
+            <column name="is_accountability" length="10">
+                <comment>是否问责</comment>
+            </column>
+        </property>
+        <property name="isAnalysis" type="java.lang.String">
+            <column name="is_analysis" length="10">
+                <comment>是否进行/完成成因分析</comment>
+            </column>
+        </property>
+        <property name="verdictResult" type="java.lang.String">
+            <column name="verdict_result" length="500">
+                <comment>判决结果</comment>
+            </column>
+        </property>
+        <property name="verdictAmount" type="java.math.BigDecimal">
+            <column name="verdict_amount" precision="20" scale="2">
+                <comment>判决/调解金额</comment>
+            </column>
+        </property>
+        <property name="implementMoney" type="java.math.BigDecimal">
+            <column name="implement_money" precision="18" scale="2">
+                <comment>已执行款项</comment>
+            </column>
+        </property>
+        <property name="saveLoss" type="java.math.BigDecimal">
+            <column name="save_loss" precision="18" scale="2">
+                <comment>避免/挽回经济损失</comment>
+            </column>
+        </property>
+        <property name="isDel" type="java.lang.String">
+            <column name="is_del" length="1">
+                <comment>是否删除：1是，0否</comment>
+            </column>
+        </property>
+        <property name="createPersonId" type="java.lang.String">
+            <column name="create_person_id" length="100">
+                <comment>创建人id</comment>
+            </column>
+        </property>
+        <property name="createPersonName" type="java.lang.String">
+            <column name="create_person_name" length="100">
+                <comment>创建人姓名</comment>
+            </column>
+        </property>
+        <property name="createDate" type="java.lang.String">
+            <column name="create_date" length="20">
+                <comment>创建时间</comment>
+            </column>
+        </property>
+        <property name="lastModifyPersonId" type="java.lang.String">
+            <column name="last_modify_person_id" length="100">
+                <comment>修改人id</comment>
+            </column>
+        </property>
+        <property name="lastModifyPersonName" type="java.lang.String">
+            <column name="last_modify_person_name" length="100">
+                <comment>最后修改人姓名</comment>
+            </column>
+        </property>
+        <property name="lastModifyDate" type="java.lang.String">
+            <column name="last_modify_date" length="20">
+                <comment>最后修改时间</comment>
+            </column>
+        </property>
+        <property name="reportPersonName" type="java.lang.String">
+            <column name="report_person_name" length="100">
+                <comment>上报人姓名</comment>
+            </column>
+        </property>
+        <property name="reportPersonId" type="java.lang.String">
+            <column name="report_person_id" length="100">
+                <comment>上报人id</comment>
+            </column>
+        </property>
+        <property name="reportDate" type="java.lang.String">
+            <column name="report_date" length="20">
+                <comment>上报时间</comment>
+            </column>
+        </property>
+        <property name="auditorPersonName" type="java.lang.String">
+            <column name="auditor_person_name" length="100">
+                <comment>审核人名</comment>
+            </column>
+        </property>
+        <property name="auditorPersonId" type="java.lang.String">
+            <column name="auditor_person_id" length="100">
+                <comment>审核人ID</comment>
+            </column>
+        </property>
+        <property name="auditorDate" type="java.lang.String">
+            <column name="auditor_date" length="20">
+                <comment>审核时间</comment>
+            </column>
+        </property>
+        <property name="mainId" type="java.lang.String">
+            <column name="main_id" length="80">
+                <comment>主表id</comment>
+            </column>
+        </property>
+        <property name="isLastest" type="java.lang.String">
+            <column name="is_lastest" length="1">
+                <comment>是否最新</comment>
+            </column>
+        </property>
+        <property name="lastProgress" type="java.lang.String">
+            <column name="last_progress" length="500">
+                <comment>最新进展</comment>
+            </column>
+        </property>
+        <property name="remark1" type="java.lang.String">
+            <column name="remark1" length="500">
+                <comment>备注1</comment>
+            </column>
+        </property>
+         
+         <!-- <property name="remark2" type="java.lang.String">
+            <column name="remark2" length="500">
+                <comment>备注2</comment>
+            </column>
+        </property>
+         <property name="remark3" type="java.lang.String">
+            <column name="remark3" length="500">
+                <comment>备注3</comment>
+            </column>
+        </property>
+        <property name="remark4" type="java.lang.String">
+            <column name="remark4" length="500">
+                <comment>备注4</comment>
+            </column>
+        </property> -->
+        <property name="indictment" type="java.lang.String">
+            <column name="indictment" length="500">
+                <comment>起诉状</comment>
+            </column>
+        </property>
+        <property name="judgment" type="java.lang.String">
+            <column name="judgment" length="500">
+                <comment>判决书/调解书</comment>
+            </column>
+        </property>
+        <property name="otherFile" type="java.lang.String">
+            <column name="other_file" length="500">
+                <comment>其它</comment>
+            </column>
+        </property>
+        
+        <property name="isLeftoverCases" type="java.lang.String">
+            <column name="is_Leftover_Cases" >
+                <comment>是否是清案遗留案件 1 是 0 否</comment>
+            </column>
+        </property>
+        <property name="isNewadd" type="java.lang.String">
+            <column name="is_Newadd">
+                <comment>/是否是新增案件 1 是 0 否</comment>
+            </column>
+        </property>
+         <property name="isStaffOptimization" type="java.lang.String">
+            <column name="is_Staff_Optimization">
+                <comment>是否因人员优化工作引发案件 1 是 0 否</comment>
+            </column>
+        </property>
+         <property name="analysisCause" type="java.lang.String">
+            <column name="analysis_Cause">
+                <comment>案件成因（物流）</comment>
+            </column>
+        </property>
+         <property name="accountabilityResults" type="java.lang.String">
+            <column name="accountability_Results">
+                <comment>问责进展情况（含问责人数及名单）（实业）</comment>
+            </column>
+        </property>
+         <property name="assistingPeople" type="java.lang.String">
+            <column name="assisting_People">
+                <comment>协助人（物流）</comment>
+            </column>
+        </property>
+         <property name="bothPreserveSituation" type="java.lang.String">
+            <column name="both_Preserve_Situation">
+                <comment>双方保全情况</comment>
+            </column>
+        </property>
+        <property name="caseAge" type="java.lang.Integer">
+            <column name="case_Age">
+                <comment>案龄</comment>
+            </column>
+        </property>
+        <property name="caseThoughtFocalPoint" type="java.lang.String">
+            <column name="case_Thought_Focal_Point">
+                <comment>办案思路、调处重点及工作计划（物流）</comment>
+            </column>
+        </property>
+         <property name="reconciliationDocument" type="java.lang.String">
+            <column name="reconciliation_Document">
+                <comment>裁判/调解/和解主文（物流）</comment>
+            </column>
+        </property>
+        <property name="casePlanDate" type="java.lang.String">
+            <column name="case_Plan_Date">
+                <comment>案件规划时间）</comment>
+            </column>
+        </property>
+          <property name="transferredNumber" type="java.lang.String">
+            <column name="transferred_Number">
+                <comment>案件移交公文号</comment>
+            </column>
+        </property>
+         <property name="closingNumber" type="java.lang.String">
+            <column name="closing_Number">
+                <comment>案件结案公文号</comment>
+            </column>
+        </property>
+        <property name="accountabilityStatus" type="java.lang.Integer">
+            <column name="accountability_Status">
+                <comment>问责状态</comment>
+            </column>
+        </property>
+         <property name="accountabilitySuggest" type="java.lang.String">
+            <column name="accountability_Suggest">
+                <comment>拟问责建议（若无需问责，请说明具体原因）（实业）</comment>
+            </column>
+        </property>
+         <property name="twoCasesImplementation" type="java.lang.String">
+            <column name="two_Cases_Implementation">
+                <comment>一案双处实施情况 （实业）</comment>
+            </column>
+        </property>
+         <property name="vcOrganID" formula="(select s.vcOrganID from hh_organInfo s where s.nNodeID = vc_company_id )"></property>
+    </class>
+</hibernate-mapping>

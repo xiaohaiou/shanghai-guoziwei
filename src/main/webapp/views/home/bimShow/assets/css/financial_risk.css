@@ -1,0 +1,183 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: url(../images/bg_f.png) no-repeat bottom, url(../images/light.png) no-repeat top, -webkit-linear-gradient(top, #075cb0, #0e8fe7);
+  color: #fff; }
+
+.clearfix {
+  *zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+    font: 0/0 a; }
+  .clearfix:after {
+    clear: both; }
+
+.fl {
+  float: left; }
+
+h1 {
+  text-align: left;
+  font-weight: 900;
+  line-height: 65px;
+  color: #0efefb;
+  font-size: 32px;
+  margin-left: 2%;
+  display: inline-block; }
+
+.bg_green {
+  background: #31d666; }
+
+.bg_red {
+  background: #ca353b; }
+
+.top {
+  height: 65px;
+  background: rgba(0, 0, 0, 0.38);
+  position: relative; }
+  .top .top_select {
+    display: inline-block;
+    line-height: 65px;
+    position: absolute;
+    right: 2%; }
+    .top .top_select span {
+      font-size: 14px;
+      margin-left: 10px; }
+    .top .top_select select {
+      border: 1px solid #829cb6;
+      height: 38px;
+      background: #3b286c;
+      color: #fff;
+      padding: 0 40px 0 10px;
+      margin-left: 10px; }
+    .top .top_select img {
+      vertical-align: middle;
+      margin-left: 10px; }
+
+.top:before {
+  content: '';
+  position: absolute;
+  left: 1%;
+  top: 60px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #4e99cc; }
+
+.top:after {
+  content: '';
+  position: absolute;
+  right: 1%;
+  top: 60px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #4e99cc; }
+
+.line {
+  width: 98%;
+  height: 1px;
+  margin-left: 1%;
+  background: #4e99cc;
+  position: relative; }
+
+.line:after {
+  content: '';
+  width: 78%;
+  height: 1px;
+  position: absolute;
+  right: 1%;
+  top: 2px;
+  margin-left: 1%;
+  background: #4e99cc; }
+
+.container {
+  font-size: 0; }
+  .container .case {
+    width: 47%;
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 35px;
+    padding-bottom: 35px; }
+    .container .case .linechart {
+      width: 100%;
+      height: 200px; }
+    .container .case .case_title {
+      font-size: 20px;
+      position: relative;
+      padding-left: 4%;
+      line-height: 46px;
+      text-indent: 6px;
+      border-bottom: 1px solid #7c93b3; }
+    .container .case .case_title:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      background: #3798df;
+      width: 3px;
+      height: 20px;
+      margin-left: 3.5%; }
+    .container .case .case_subtext {
+      margin-right: 3.5%;
+      font-size: 20px; }
+    .container .case .case_subtext1:before {
+      content: '总市值：';
+      color: #71b0dd;
+      font-size: 16px;
+      padding-right: 1%; }
+    .container .case .case_subtext2:before {
+      content: '流通市值：';
+      color: #71b0dd;
+      font-size: 16px;
+      padding-right: 1%; }
+    .container .case .case_left {
+      width: 28%;
+      height: 126px;
+      border-radius: 5px;
+      margin-left: 3.5%;
+      margin-top: 35px; }
+      .container .case .case_left .case_left_icon {
+        margin-top: 43px;
+        padding-bottom: 43px;
+        margin-left: 10%;
+        display: inline-block;
+        float: left; }
+      .container .case .case_left .case_left_block {
+        float: left;
+        width: 70%;
+        margin-top: 12px; }
+        .container .case .case_left .case_left_block .case_left_title {
+          display: inline-block;
+          float: left;
+          font-size: 46px;
+          font-weight: bold;
+          width: 100%;
+          margin-left: 15%; }
+        .container .case .case_left .case_left_block .case_left_content {
+          font-size: 16px;
+          float: left;
+          margin-top: 5px;
+          margin-left: 17%; }
+          .container .case .case_left .case_left_block .case_left_content img {
+            margin-bottom: 2px; }
+    .container .case table {
+      font-size: 16px;
+      float: left;
+      margin-top: 35px;
+      margin-left: 1.5%;
+      width: 63.5%;
+      text-align: center; }
+      .container .case table tbody tr {
+        line-height: 28px; }
+        .container .case table tbody tr th {
+          color: #71b0dd;
+          font-weight: normal; }
+        .container .case table tbody tr td {
+          font-size: 20px; }
+
+/*# sourceMappingURL=financial_risk.css.map */

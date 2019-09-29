@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+	<!-- Hibernate配置 -->
+	<!-- 数据源配置,使用应用内的JDBC数据库连接池 -->
+	<bean id="parentDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="minPoolSize" value="${cpool.miniPoolSize}" />
+		<property name="maxPoolSize" value="${cpool.maxPoolSize}" />
+		<property name="initialPoolSize" value="${cpool.initialPoolSize}" />
+		<property name="maxIdleTime" value="${cpool.maxIdleTime}" />
+		<property name="acquireIncrement" value="${cpool.acquireIncrement}" />
+
+		<property name="acquireRetryAttempts" value="${cpool.acquireRetryAttempts}" />
+		<property name="acquireRetryDelay" value="${cpool.acquireRetryDelay}" />
+		<property name="testConnectionOnCheckin" value="${cpool.testConnectionOnCheckin}" />
+		<property name="automaticTestTable" value="${cpool.automaticTestTable}" />
+		<property name="idleConnectionTestPeriod" value="${cpool.idleConnectionTestPeriod}" />
+		<property name="checkoutTimeout" value="${cpool.checkoutTimeout}" />
+	</bean>
+	<!-- 数据源  正式
+	<bean id="masterDataSource" parent="parentDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://31.15.1.26:3306/shanghai-gzw?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="1qaz2wsx@RZ" />
+	</bean>
+
+	
+	<bean id="slaveDataSource" parent="parentDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://31.15.1.26:3306/shanghai-gzw?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="root" />
+		<property name="password" value="1qaz2wsx@RZ" />
+	</bean>-->
+	
+	<!-- 数据源  测试 -->
+	<bean id="masterDataSource" parent="parentDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://192.168.1.111:3306/shanghai-gzw?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="hhsy" />
+		<property name="password" value="hhsy" />
+	</bean>
+
+	
+	<bean id="slaveDataSource" parent="parentDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://192.168.1.111:3306/shanghai-gzw?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="user" value="hhsy" />
+		<property name="password" value="hhsy" />
+	</bean>
+
+	<bean id="dataSource" class="com.softline.util.DynamicDataSource">
+		<property name="targetDataSources">
+			<map key-type="java.lang.String">
+				<entry key="slave" value-ref="slaveDataSource" />
+				<entry key="master" value-ref="masterDataSource" />
+			</map>
+		</property>
+		<property name="defaultTargetDataSource" ref="masterDataSource" />
+	</bean>
+
+	<!-- 配置SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="packagesToScan" value="com.softline.entity">
+		</property>
+		<property name="mappingLocations">
+			<value>classpath:/com/softline/entity/**/*.hbm.xml </value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!--一个Hibernate Dialect类名允许Hibernate针对特定的关系数据库生成优化的SQL。取值full.classname.of.Dialect（详解见下） -->
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<!--输出所有SQL语句到控制台,有一个另外的选择是把org.hibernate.SQL这个log category设为debug。 eg：true|false  -->
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<!--在log和console中打印出更漂亮的SQL。取值 true|false  -->
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+				<prop key="current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+				<prop key="hibernate.cache.use_query_cache">false</prop>
+				<prop key="jdbc.use_scrollable_resultset">false</prop>
+				<!-- hibernate.format_sql:在log和console中打印出更漂亮的SQL。取值 true|false
+				hibernate.default_schema：在生成的SQL中，将给定的scheam/tablespace附加于非全限定名的表名上，取值SCHEMA_NAME
+				hibernate.default_catelog:在生成的SQL中，将给定的catalog附加于非全限定名的表名上。取值CATALOG_NAME.
+				hibernate.session_factory_name：SessionFactory创建后，将自动使用这个名字绑定到JNDI中，取值 jndi|composite|name
+				hibernate.max_fetch_depth:为单向关联(一对一、多对一)的外连接抓取(outer join fetch)树设置最大深度.值为0意味着将关闭默认的外连接抓取。取值建议在0到3之间。
+				hibernate.default_batch_fetch_size:为Hibernate关联的批量抓取设置默认数量。取值建议为4、8和16。
+				hibernate.default_entity_mode:为由这个SessionFactory打开的所有Session指定默认的实体表现模式，取值 dynamic-map|dom4j|pojo
+				hibernate.order_updates：强制Hibernate按照被更新数据的主键，为SQL更新排序。这么做将减少在高并发系统中事务的死锁。 取值 true|false
+				hibernate.generate_statistics：如果开启，hibernate将收集有助于性能调节的统计数据。取值 true|false
+				hibernate.use_identifer_rollback：如果开启，在对象被删除时生成的标识属性将被重设为默认值。取值 true|false
+				hibernate.use_sql_comments：如果开启，hibernate将在SQL中生成有助于调式的注解信息。默认为false 取值true|false -->
+			</props>
+		</property>
+	</bean>
+
+	<!-- 切换数据源 -->
+	<bean id="dataSourceAdvice" class="com.softline.util.DataSourceAdvice" />
+	<aop:config>
+		<aop:advisor pointcut="execution(* com.softline.service..*.*(..))"
+			advice-ref="dataSourceAdvice" />
+	</aop:config>
+
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 配置事务，使用代理的方式 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- 对增、删、改方法进行事务支持 -->  
+            <tx:method name="add*" propagation="REQUIRED" />  
+            <tx:method name="create*" propagation="REQUIRED" />  
+            <tx:method name="save*" propagation="REQUIRED" />  
+            <tx:method name="edit*" propagation="REQUIRED" />  
+            <tx:method name="update*" propagation="REQUIRED" />  
+            <tx:method name="delete*" propagation="REQUIRED" />  
+            <tx:method name="remove*" propagation="REQUIRED" />
+            <!-- <tx:method name="isLog" propagation="REQUIRED" /> --> 
+            <!-- 日志模块不记录操作 --> 
+            <tx:method name="log*" propagation="REQUIRED" />  
+            <!-- 对其它方法进行只读事务 -->  
+            <tx:method name="*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 采用声明式容器管理事务一般只对service层进行处理 -->
+	<aop:config expose-proxy="true">
+		<!-- 只对业务逻辑层实施事务 -->
+		<aop:pointcut id="txPointcut" expression="execution(* com.softline.service..*.*(..)) or execution(* com.softline.webService..*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
+		<!-- 定义一个切面 
+		<aop:aspect id="aspect" ref="aopLog">-->
+			<!-- 配置切入点 
+			<aop:after-returning pointcut-ref="txPointcut" method="doAfterReturning"/>
+		</aop:aspect>-->
+	</aop:config>
+</beans>
