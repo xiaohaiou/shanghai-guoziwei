@@ -9,7 +9,7 @@
 	<properties>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<spring.version>4.1.4.RELEASE</spring.version>
-		<jackson.version>2.5.0</jackson.version>
+		<jackson.version>2.10.1</jackson.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<cxf.version>2.2.3</cxf.version>
 	</properties>
